@@ -1,0 +1,25 @@
+// Funciones para calcular medidas
+@use 'sass:math';
+@use 'sass:meta';
+
+// Quita las unidades (como px) para poder hacer cuentas
+@function strip-unit($number) {
+  @if meta.type-of($number) == 'number' and not math.is-unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+  @return $number;
+}
+
+// Pasa de píxeles a rem
+@function rem($pixels, $base: 16px) {
+  $pixels-unitless: strip-unit($pixels);
+  $base-unitless: strip-unit($base);
+  @return math.div($pixels-unitless, $base-unitless) * 1rem;
+}
+
+// Pasa de píxeles a em
+@function em($pixels, $context: 16px) {
+  $pixels-unitless: strip-unit($pixels);
+  $context-unitless: strip-unit($context);
+  @return math.div($pixels-unitless, $context-unitless) * 1em;
+}
