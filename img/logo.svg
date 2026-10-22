@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Disco exterior -->
+  <circle cx="24" cy="24" r="22" fill="#18181b" stroke="#d97706" stroke-width="2"/>
+  <!-- Surcos del vinilo -->
+  <circle cx="24" cy="24" r="18" stroke="#27272a" stroke-width="1"/>
+  <circle cx="24" cy="24" r="14" stroke="#27272a" stroke-width="1"/>
+  <circle cx="24" cy="24" r="10" stroke="#27272a" stroke-width="1"/>
+  <!-- Etiqueta central ámbar -->
+  <circle cx="24" cy="24" r="7" fill="#d97706"/>
+  <!-- Agujero central -->
+  <circle cx="24" cy="24" r="2.5" fill="#18181b"/>
+  <!-- Aguja / Brazo fonocaptor estilizado -->
+  <path d="M40 8 L32 20 L27 22" stroke="#f4f4f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="40" cy="8" r="3" fill="#d97706"/>
+</svg>
