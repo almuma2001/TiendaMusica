@@ -1,0 +1,120 @@
+// Barra de filtros del catálogo (.filters)
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mix;
+
+.filters {
+  background-color: vars.$color-bg-card;
+  padding: vars.$spacing-md vars.$spacing-lg;
+  border-radius: vars.$border-radius-lg;
+  border: 1px solid vars.$color-border;
+  margin-bottom: vars.$spacing-2xl;
+  @include mix.flex-box(column, space-between, stretch, vars.$spacing-md);
+  @include mix.card-shadow(1);
+
+  @include mix.respond-to('md') {
+    @include mix.flex-box(row, space-between, center, vars.$spacing-lg);
+  }
+
+  // Botones de categorías
+  &__group {
+    @include mix.flex-box(row, flex-start, center, vars.$spacing-xs);
+    flex-wrap: wrap;
+  }
+
+  // Píldora de categoría
+  &__pill {
+    padding: fn.rem(6px) fn.rem(14px);
+    border-radius: vars.$border-radius-full;
+    font-size: vars.$font-size-sm;
+    font-weight: vars.$font-weight-medium;
+    color: vars.$color-text-main;
+    background-color: vars.$color-bg-alt;
+    border: 1px solid transparent;
+    transition: all vars.$transition-fast;
+    cursor: pointer;
+
+    &:hover {
+      background-color: vars.$color-border;
+      color: vars.$color-primary;
+    }
+
+    &--active {
+      background-color: vars.$color-primary;
+      color: #ffffff;
+      border-color: vars.$color-primary;
+
+      &:hover {
+        background-color: vars.$color-primary-light;
+        color: #ffffff;
+      }
+    }
+  }
+
+  // Desplegable de ordenar por precio/novedad
+  &__sort {
+    @include mix.flex-box(row, flex-end, center, vars.$spacing-sm);
+
+    label {
+      font-size: vars.$font-size-sm;
+      color: vars.$color-text-muted;
+      white-space: nowrap;
+    }
+
+    select {
+      padding: fn.rem(6px) fn.rem(12px);
+      font-size: vars.$font-size-sm;
+      border: 1px solid vars.$color-border;
+      border-radius: vars.$border-radius-md;
+      background-color: #ffffff;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+        border-color: vars.$color-secondary;
+      }
+    }
+  }
+}
+
+// Botones de paginación (1, 2, 3...)
+.pagination {
+  margin-top: vars.$spacing-3xl;
+  @include mix.flex-box(row, center, center, vars.$spacing-xs);
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: vars.$border-radius-md;
+    border: 1px solid vars.$color-border;
+    background-color: #ffffff;
+    color: vars.$color-text-main;
+    font-size: vars.$font-size-sm;
+    font-weight: vars.$font-weight-medium;
+    transition: all vars.$transition-fast;
+
+    &:hover {
+      border-color: vars.$color-secondary;
+      color: vars.$color-secondary;
+    }
+
+    &--active {
+      background-color: vars.$color-primary;
+      color: #ffffff;
+      border-color: vars.$color-primary;
+
+      &:hover {
+        background-color: vars.$color-primary;
+        color: #ffffff;
+      }
+    }
+
+    &--arrow {
+      width: auto;
+      padding: 0 fn.rem(12px);
+    }
+  }
+}
