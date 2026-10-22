@@ -1,0 +1,109 @@
+// Estilos de formularios (.form)
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mix;
+
+.form {
+  background-color: vars.$color-bg-card;
+  padding: vars.$spacing-xl;
+  border-radius: vars.$border-radius-lg;
+  border: 1px solid vars.$color-border;
+  @include mix.card-shadow(1);
+
+  // Dos columnas en ordenador
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: vars.$spacing-md;
+
+    @include mix.respond-to('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // Cada campo del formulario
+  &__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: vars.$spacing-md;
+
+    // Campo que ocupa todo el ancho
+    &--full {
+      grid-column: 1 / -1;
+    }
+  }
+
+  // Etiqueta del campo
+  &__label {
+    font-size: vars.$font-size-sm;
+    font-weight: vars.$font-weight-medium;
+    color: vars.$color-text-main;
+    margin-bottom: vars.$spacing-xs;
+
+    span {
+      color: vars.$color-accent;
+    }
+  }
+
+  // Cajas de texto, desplegables y áreas de texto
+  &__input,
+  &__select,
+  &__textarea {
+    width: 100%;
+    padding: fn.rem(10px) fn.rem(14px);
+    font-size: vars.$font-size-base;
+    border: 1px solid vars.$color-border;
+    border-radius: vars.$border-radius-md;
+    background-color: #ffffff;
+    color: vars.$color-text-main;
+    transition: border-color vars.$transition-fast, box-shadow vars.$transition-fast;
+
+    &:focus {
+      outline: none;
+      border-color: vars.$color-secondary;
+      box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+    }
+
+    &::placeholder {
+      color: #a1a1aa;
+    }
+  }
+
+  &__textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  // Casilla de verificación (checkbox)
+  &__checkbox-wrapper {
+    @include mix.flex-box(row, flex-start, flex-start, vars.$spacing-sm);
+    margin-bottom: vars.$spacing-md;
+  }
+
+  &__checkbox {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: vars.$color-secondary;
+    cursor: pointer;
+  }
+
+  &__checkbox-label {
+    font-size: vars.$font-size-sm;
+    color: vars.$color-text-muted;
+    cursor: pointer;
+    line-height: vars.$line-height-normal;
+
+    a {
+      color: vars.$color-secondary;
+      text-decoration: underline;
+    }
+  }
+
+  // Texto de ayuda pequeño
+  &__helper {
+    font-size: vars.$font-size-xs;
+    color: vars.$color-text-muted;
+    margin-top: vars.$spacing-xs;
+  }
+}

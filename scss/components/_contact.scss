@@ -1,0 +1,115 @@
+// Estilos para la página de contacto (.contact)
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mix;
+
+// Dos columnas: info de la tienda a la izquierda y formulario a la derecha
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: vars.$spacing-2xl;
+  margin-bottom: vars.$spacing-3xl;
+
+  @include mix.respond-to('lg') {
+    grid-template-columns: 1fr 1.3fr;
+  }
+}
+
+// Tarjeta con dirección, teléfono y mapa
+.contact-info {
+  background-color: vars.$color-bg-card;
+  padding: vars.$spacing-xl;
+  border-radius: vars.$border-radius-lg;
+  border: 1px solid vars.$color-border;
+  @include mix.card-shadow(1);
+
+  &__title {
+    font-size: fn.rem(22px);
+    margin-bottom: vars.$spacing-sm;
+  }
+
+  &__lead {
+    font-size: vars.$font-size-sm;
+    color: vars.$color-text-muted;
+    margin-bottom: vars.$spacing-xl;
+  }
+
+  // Fila de dato (icono + texto)
+  &__item {
+    @include mix.flex-box(row, flex-start, flex-start, vars.$spacing-md);
+    margin-bottom: vars.$spacing-lg;
+
+    &:last-child {
+      margin-bottom: vars.$spacing-xl;
+    }
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: vars.$color-bg-alt;
+    color: vars.$color-secondary;
+    @include mix.flex-box(row, center, center);
+    font-size: fn.rem(18px);
+    flex-shrink: 0;
+  }
+
+  &__label {
+    font-size: vars.$font-size-xs;
+    text-transform: uppercase;
+    font-weight: vars.$font-weight-bold;
+    color: vars.$color-text-muted;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  &__value {
+    font-size: vars.$font-size-sm;
+    color: vars.$color-text-main;
+    font-weight: vars.$font-weight-medium;
+  }
+
+  // Contenedor del mapa
+  &__map-wrapper {
+    margin-top: vars.$spacing-lg;
+    border-radius: vars.$border-radius-md;
+    overflow: hidden;
+    border: 1px solid vars.$color-border;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
+
+// Preguntas frecuentes (FAQ)
+.faq {
+  &__item {
+    background-color: vars.$color-bg-card;
+    border: 1px solid vars.$color-border;
+    border-radius: vars.$border-radius-md;
+    padding: vars.$spacing-lg;
+    margin-bottom: vars.$spacing-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__question {
+    font-size: fn.rem(17px);
+    font-family: vars.$font-family-serif;
+    color: vars.$color-primary;
+    margin-bottom: vars.$spacing-xs;
+  }
+
+  &__answer {
+    font-size: vars.$font-size-sm;
+    color: vars.$color-text-muted;
+    line-height: vars.$line-height-relaxed;
+    margin-bottom: 0;
+  }
+}
