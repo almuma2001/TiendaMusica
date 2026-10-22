@@ -1,0 +1,203 @@
+// Banner de bienvenida y ventajas (.hero)
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mix;
+
+.hero {
+  background: linear-gradient(135deg, vars.$color-bg-dark 0%, #222227 100%);
+  color: vars.$color-text-light;
+  padding: vars.$spacing-3xl 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid vars.$color-border-dark;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: vars.$spacing-2xl;
+    align-items: center;
+
+    @include mix.respond-to('md') {
+      grid-template-columns: 1.2fr 1fr;
+    }
+  }
+
+  // Textos y botones
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    color: vars.$color-secondary;
+    font-size: vars.$font-size-sm;
+    font-weight: vars.$font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: vars.$spacing-sm;
+  }
+
+  &__title {
+    font-size: fn.rem(36px);
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: vars.$spacing-md;
+
+    @include mix.respond-to('md') {
+      font-size: fn.rem(48px);
+    }
+
+    span {
+      color: vars.$color-secondary;
+    }
+  }
+
+  &__description {
+    font-size: vars.$font-size-md;
+    color: #d4d4d8;
+    line-height: vars.$line-height-relaxed;
+    margin-bottom: vars.$spacing-xl;
+    max-width: 520px;
+  }
+
+  &__cta-group {
+    @include mix.flex-box(row, flex-start, center, vars.$spacing-md);
+    flex-wrap: wrap;
+  }
+
+  // Portada y disco girando en la bienvenida
+  &__visual {
+    @include mix.flex-box(row, center, center);
+    position: relative;
+  }
+
+  &__record-wrap {
+    position: relative;
+    width: 260px;
+    height: 260px;
+
+    @include mix.respond-to('sm') {
+      width: 320px;
+      height: 320px;
+    }
+
+    @include mix.respond-to('lg') {
+      width: 380px;
+      height: 380px;
+    }
+  }
+
+  // Funda del disco
+  &__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 82%;
+    height: 82%;
+    z-index: 2;
+    border-radius: vars.$border-radius-md;
+    overflow: hidden;
+    @include mix.card-shadow(4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // Disco que gira
+  &__vinyl {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    z-index: 1;
+    background: radial-gradient(
+      circle,
+      #d97706 0%,
+      #d97706 18%,
+      #18181b 19%,
+      #27272a 20%,
+      #18181b 21%,
+      #27272a 35%,
+      #18181b 36%,
+      #27272a 50%,
+      #18181b 51%,
+      #27272a 68%,
+      #18181b 69%,
+      #111113 100%
+    );
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    animation: vinyl-spin 25s linear infinite;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+      background-color: vars.$color-bg-dark;
+      border-radius: 50%;
+    }
+  }
+}
+
+// Giro continuo del disco
+@keyframes vinyl-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Bloques con ventajas de la tienda (3 cajas)
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: vars.$spacing-lg;
+
+  @include mix.respond-to('sm') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    background-color: vars.$color-bg-card;
+    padding: vars.$spacing-xl;
+    border-radius: vars.$border-radius-lg;
+    border: 1px solid vars.$color-border;
+    text-align: center;
+    transition: transform vars.$transition-fast;
+    @include mix.card-shadow(1);
+
+    &:hover {
+      transform: translateY(-4px);
+      @include mix.card-shadow(2);
+    }
+  }
+
+  &__icon {
+    font-size: fn.rem(36px);
+    margin-bottom: vars.$spacing-md;
+    display: inline-block;
+  }
+
+  &__title {
+    font-size: fn.rem(18px);
+    margin-bottom: vars.$spacing-xs;
+  }
+
+  &__text {
+    font-size: vars.$font-size-sm;
+    color: vars.$color-text-muted;
+  }
+}
