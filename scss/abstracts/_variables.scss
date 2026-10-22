@@ -1,0 +1,98 @@
+// Variables globales de la web
+
+// Colores principales
+$color-primary: #18181b;       // Negro para cabecera, pie y títulos
+$color-primary-light: #27272a; // Gris oscuro
+$color-secondary: #d97706;     // Naranja/ámbar de los botones y detalles
+$color-secondary-hover: #b45309;
+$color-accent: #e11d48;        // Rojo para ofertas
+$color-accent-hover: #be123c;
+
+// Fondos
+$color-bg-main: #faf8f5;       // Fondo claro de la web
+$color-bg-card: #ffffff;       // Fondo blanco de las tarjetas
+$color-bg-alt: #f4efe6;        // Fondo crema para algunas secciones
+$color-bg-dark: #121214;       // Fondo oscuro
+
+// Textos
+$color-text-main: #27272a;     // Texto normal oscuro
+$color-text-muted: #71717a;    // Texto gris secundario
+$color-text-light: #f4f4f5;    // Texto blanco
+$color-text-accent: #d97706;   // Texto naranja destacado
+
+// Bordes
+$color-border: #e4e4e7;
+$color-border-dark: #2e2e33;
+
+// Estados
+$color-success: #16a34a;
+$color-warning: #eab308;
+$color-danger: #dc2626;
+$color-info: #0284c7;
+
+// Colores de las etiquetas de los discos (usado con @each)
+$badge-types: (
+  'novedad': #0284c7,
+  'bestseller': #d97706,
+  'oferta': #dc2626,
+  'edicion-especial': #7c3aed,
+  'stock': #16a34a
+);
+
+// Tipografías
+$font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+
+// Tamaños de texto
+$font-size-xs: 0.75rem;    // 12px
+$font-size-sm: 0.875rem;   // 14px
+$font-size-base: 1rem;     // 16px
+$font-size-md: 1.125rem;   // 18px
+$font-size-lg: 1.25rem;    // 20px
+$font-size-xl: 1.5rem;     // 24px
+$font-size-2xl: 2rem;      // 32px
+$font-size-3xl: 2.5rem;    // 40px
+
+// Grosor del texto
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Altura de línea
+$line-height-tight: 1.2;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.7;
+
+// Espaciados (márgenes y rellenos)
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+$spacing-2xl: 3rem;     // 48px
+$spacing-3xl: 4rem;     // 64px
+
+// Bordes redondeados
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-full: 9999px;
+
+// Sombras
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.08);
+$shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.06);
+
+// Animaciones
+$transition-fast: 0.15s ease;
+$transition-normal: 0.3s ease;
+
+// Ancho de pantalla para versión móvil y ordenador
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px
+);
