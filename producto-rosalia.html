@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comprar vinilo El Mal Querer de Rosalía. Edición especial en carpeta gatefold con ilustraciones de Filip Custic y letras capituladas.">
+  <title>Rosalía - El Mal Querer (LP Gatefold) | La Vinilería</title>
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Cabecera y menú -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo" aria-label="Ir a página de inicio de La Vinilería">
+        <img src="img/logo.svg" alt="Logotipo La Vinilería" class="header__logo-icon">
+        <span class="header__brand">La <span class="header__brand-accent">Vinilería</span></span>
+      </a>
+
+      <!-- Botón para el menú en móviles -->
+      <input type="checkbox" id="menu-toggle" class="header__checkbox" aria-label="Alternar menú de navegación">
+      <label for="menu-toggle" class="header__toggle" aria-label="Abrir menú">
+        <span class="header__toggle-line"></span>
+        <span class="header__toggle-line"></span>
+        <span class="header__toggle-line"></span>
+      </label>
+
+      <!-- Enlaces de navegación -->
+      <nav class="header__nav" aria-label="Navegación principal">
+        <ul class="header__list">
+          <li class="header__item"><a href="index.html" class="header__link">Inicio</a></li>
+          <li class="header__item"><a href="catalogo.html" class="header__link">Catálogo</a></li>
+          <li class="header__item"><a href="producto.html" class="header__link header__link--active">Vinilo Destacado</a></li>
+          <li class="header__item"><a href="contacto.html" class="header__link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Carrito -->
+      <div class="header__actions">
+        <a href="catalogo.html" class="header__cart-link" title="Ver carrito de compras">
+          <span>🛒 Cesta</span>
+          <span class="header__cart-badge">2</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Ficha del vinilo -->
+  <main class="product-detail">
+    <div class="container">
+      <!-- Miga de pan -->
+      <nav class="breadcrumb" aria-label="Miga de pan">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="index.html" class="breadcrumb__link">Inicio</a></li>
+          <li class="breadcrumb__item"><a href="catalogo.html" class="breadcrumb__link">Catálogo</a></li>
+          <li class="breadcrumb__item"><a href="catalogo.html" class="breadcrumb__link">Nuevo Flamenco</a></li>
+          <li class="breadcrumb__item" aria-current="page">El Mal Querer</li>
+        </ol>
+      </nav>
+
+      <!-- Portada y vinilo -->
+      <div class="product-detail__grid">
+        <div class="product-detail__gallery">
+          <div class="product-detail__sleeve-wrap">
+            <img src="img/vinyl-rosalia.jpeg" alt="Funda de vinilo Rosalía - El Mal Querer" class="product-detail__cover-img">
+            <div class="product-detail__vinyl-disc" aria-hidden="true"></div>
+          </div>
+          <div class="product-detail__badges">
+            <span class="badge badge--oferta">-15% Descuento</span>
+            <span class="badge badge--edicion-especial">Carpeta Gatefold</span>
+          </div>
+        </div>
+
+        <!-- Información y compra -->
+        <section class="product-detail__info">
+          <span class="product-detail__genre">Nuevo Flamenco / Art Pop</span>
+          <p class="product-detail__artist">Rosalía</p>
+          <h1 class="product-detail__title">El Mal Querer</h1>
+
+          <div class="product-detail__rating">
+            <span class="stars" aria-label="5 de 5 estrellas">★★★★★</span>
+            <span>4.8 / 5 (136 reseñas)</span>
+          </div>
+
+          <div class="product-detail__price-wrap">
+            <span class="product-detail__price">22,95 €</span>
+            <span class="product-detail__price-tax"><del style="color: #a1a1aa; font-size: 1.1rem; margin-right: 0.5rem;">27,00 €</del> IVA incluido · Oferta especial</span>
+          </div>
+
+          <div class="product-detail__stock-status">
+            <span>En stock en la tienda de Córdoba (Envío inmediato en 24/48h)</span>
+          </div>
+
+          <p class="product-detail__description">
+            Inspirado en la novela anónima occitana del siglo XIII <em>Flamenca</em>, el segundo álbum de estudio de la artista catalana redefinió las fronteras entre el cante flamenco tradicional y la vanguardia urbana electrónica contemporánea con la coproducción de El Guincho. Esta edición en vinilo incluye libreto desplegable con el arte conceptual de Filip Custic.
+          </p>
+
+          <!-- Botones de compra -->
+          <form class="product-detail__actions" action="contacto.html" method="get">
+            <div class="product-detail__quantity">
+              <label for="product-qty">Cantidad:</label>
+              <input type="number" id="product-qty" name="cantidad" value="1" min="1" max="10">
+            </div>
+            <button type="submit" class="btn btn--secondary btn--lg">Añadir a la Cesta</button>
+            <a href="contacto.html" class="btn btn--primary btn--lg">Comprar Ahora</a>
+          </form>
+
+          <!-- Ventajas del envío -->
+          <ul class="product-detail__guarantees">
+            <li>Embalaje ultra-reforzado específico para transporte de vinilos.</li>
+            <li>Garantía de prensado plano sin ondulaciones ni ruidos de masa.</li>
+            <li>Devolución gratuita durante 14 días si no quedas satisfecho.</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Canciones y detalles técnicos -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+        <!-- Lista de canciones -->
+        <article>
+          <h2>Lista de Temas (Tracklist por Capítulos)</h2>
+          <table class="product-detail__tracklist-table">
+            <thead>
+              <tr><th colspan="3" style="background-color: #f4efe6;">Cara A (33 RPM)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Malamente (Cap. 1: Augurio)</td><td>2:30</td></tr>
+              <tr><td>2</td><td>Que no salga la luna (Cap. 2: Boda)</td><td>4:29</td></tr>
+              <tr><td>3</td><td>Pienso en tu mirá (Cap. 3: Celos)</td><td>3:13</td></tr>
+              <tr><td>4</td><td>De aquí no sales (Cap. 4: Disputa)</td><td>2:24</td></tr>
+              <tr><td>5</td><td>Reniego (Cap. 5: Lamento)</td><td>3:28</td></tr>
+            </tbody>
+            <thead>
+              <tr><th colspan="3" style="background-color: #f4efe6;">Cara B (33 RPM)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>6</td><td>Preso (Cap. 6: Clausura)</td><td>0:40</td></tr>
+              <tr><td>7</td><td>Bagdad (Cap. 7: Liturgia)</td><td>3:02</td></tr>
+              <tr><td>8</td><td>Di mi nombre (Cap. 8: Éxtasis)</td><td>2:42</td></tr>
+              <tr><td>9</td><td>Nana (Cap. 9: Concepción)</td><td>3:17</td></tr>
+              <tr><td>10</td><td>Maldición (Cap. 10: Cordura)</td><td>2:55</td></tr>
+              <tr><td>11</td><td>A ningún hombre (Cap. 11: Poder)</td><td>1:34</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <!-- Ficha técnica -->
+        <article>
+          <h2>Ficha Técnica del Vinilo</h2>
+          <table class="product-detail__specs-table">
+            <tbody>
+              <tr><th>Artista:</th><td>Rosalía</td></tr>
+              <tr><th>Álbum:</th><td>El Mal Querer</td></tr>
+              <tr><th>Año original:</th><td>2018</td></tr>
+              <tr><th>Sello:</th><td>Sony Music Entertainment</td></tr>
+              <tr><th>Formato:</th><td>Vinilo 12" LP</td></tr>
+              <tr><th>Velocidad:</th><td>33 1/3 RPM</td></tr>
+              <tr><th>Cubierta:</th><td>Gatefold desplegable</td></tr>
+              <tr><th>Estado:</th><td>Nuevo / Precintado de fábrica (Mint)</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </div>
+
+      <!-- Discos recomendados -->
+      <section class="section section--alt" style="border-radius: 12px; padding: 2rem;">
+        <header class="section__header">
+          <h2 class="section__title">Álbumes Relacionados</h2>
+          <p class="section__subtitle">Otras producciones innovadoras que te fascinarán:</p>
+        </header>
+
+        <div class="products-grid">
+          <article class="card">
+            <div class="card__media">
+              <span class="card__badge badge badge--edicion-especial">Doble LP</span>
+              <img src="img/vinyl-daft-punk.jpeg" alt="Daft Punk" class="card__image">
+              <div class="card__disc" aria-hidden="true"></div>
+            </div>
+            <div class="card__body">
+              <span class="card__genre">Electrónica / Funk</span>
+              <span class="card__artist">Daft Punk</span>
+              <h3 class="card__title"><a href="producto-daft-punk.html">Random Access Memories</a></h3>
+              <div class="card__footer">
+                <span class="card__price">36,00 €</span>
+                <a href="producto-daft-punk.html" class="btn btn--outline btn--sm">Ver</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <span class="card__badge badge badge--novedad">Top Soul</span>
+              <img src="img/vinyl-amy-winehouse.png" alt="Amy Winehouse" class="card__image">
+              <div class="card__disc" aria-hidden="true"></div>
+            </div>
+            <div class="card__body">
+              <span class="card__genre">Soul / R&amp;B</span>
+              <span class="card__artist">Amy Winehouse</span>
+              <h3 class="card__title"><a href="producto-amy-winehouse.html">Back to Black</a></h3>
+              <div class="card__footer">
+                <span class="card__price">28,00 €</span>
+                <a href="producto-amy-winehouse.html" class="btn btn--outline btn--sm">Ver</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <span class="card__badge badge badge--bestseller">Hito Histórico</span>
+              <img src="img/vinyl-michael-jackson.png" alt="Michael Jackson" class="card__image">
+              <div class="card__disc" aria-hidden="true"></div>
+            </div>
+            <div class="card__body">
+              <span class="card__genre">Pop / Funk</span>
+              <span class="card__artist">Michael Jackson</span>
+              <h3 class="card__title"><a href="producto-michael-jackson.html">Thriller</a></h3>
+              <div class="card__footer">
+                <span class="card__price">27,90 €</span>
+                <a href="producto-michael-jackson.html" class="btn btn--outline btn--sm">Ver</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Columna 1: Información -->
+        <div class="footer__col">
+          <p class="footer__brand">La <span>Vinilería</span></p>
+          <p class="footer__description">Tienda independiente dedicada al coleccionismo de discos de vinilo. Preservamos la calidez del sonido acústico con prensados de alta calidad de 180g.</p>
+          <p class="footer__info-item">📍 Calle San Fernando, 12, 14003 Córdoba</p>
+          <p class="footer__info-item">📞 +34 957 00 12 34</p>
+        </div>
+        <!-- Columna 2: Enlaces -->
+        <div class="footer__col">
+          <h3 class="footer__title">Navegación</h3>
+          <ul class="footer__list">
+            <li><a href="index.html" class="footer__link">Inicio</a></li>
+            <li><a href="catalogo.html" class="footer__link">Catálogo Completo</a></li>
+            <li><a href="producto.html" class="footer__link">Vinilo Destacado</a></li>
+            <li><a href="contacto.html" class="footer__link">Contacto y Tienda</a></li>
+          </ul>
+        </div>
+        <!-- Columna 3: Formatos -->
+        <div class="footer__col">
+          <h3 class="footer__title">Formatos</h3>
+          <ul class="footer__list">
+            <li><a href="catalogo.html" class="footer__link">LP 12" de 180 gramos</a></li>
+            <li><a href="catalogo.html" class="footer__link">Ediciones Gatefold Doble</a></li>
+            <li><a href="catalogo.html" class="footer__link">Singles 7" 45 RPM</a></li>
+            <li><a href="catalogo.html" class="footer__link">Primeras Ediciones</a></li>
+          </ul>
+        </div>
+        <!-- Columna 4: Horario -->
+        <div class="footer__col">
+          <h3 class="footer__title">Horario Tienda</h3>
+          <p class="footer__info-item"><strong>Lunes a Viernes:</strong> 10:00 - 14:00 y 17:00 - 20:30</p>
+          <p class="footer__info-item"><strong>Sábados:</strong> 10:30 - 14:00</p>
+          <p class="footer__info-item"><strong>Domingos:</strong> Cerrado</p>
+        </div>
+      </div>
+      <!-- Copyright -->
+      <div class="footer__bottom">
+        <p>&copy; 2026 La Vinilería S.L. Todos los derechos reservados.</p>
+        <p class="footer__academic">Proyecto DAW - Diseño de Interfaces Web (Actividad SCSS & Git)</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
