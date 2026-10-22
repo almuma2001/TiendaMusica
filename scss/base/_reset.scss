@@ -1,0 +1,107 @@
+// Reseteo de estilos y valores por defecto
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mix;
+
+// Quitar márgenes y rellenos que vienen por defecto
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; // 16px base
+  scroll-behavior: smooth;
+}
+
+// Estilos generales del body
+body {
+  font-family: vars.$font-family-sans;
+  font-size: vars.$font-size-base;
+  line-height: vars.$line-height-normal;
+  color: vars.$color-text-main;
+  background-color: vars.$color-bg-main;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Títulos
+h1, h2, h3, h4, h5, h6 {
+  font-family: vars.$font-family-serif;
+  color: vars.$color-primary;
+  line-height: vars.$line-height-tight;
+  font-weight: vars.$font-weight-bold;
+  margin-bottom: vars.$spacing-sm;
+}
+
+h1 {
+  font-size: fn.rem(32px);
+
+  @include mix.respond-to('md') {
+    font-size: fn.rem(42px);
+  }
+}
+
+h2 {
+  font-size: fn.rem(26px);
+
+  @include mix.respond-to('md') {
+    font-size: fn.rem(32px);
+  }
+}
+
+h3 {
+  font-size: fn.rem(20px);
+
+  @include mix.respond-to('md') {
+    font-size: fn.rem(24px);
+  }
+}
+
+// Párrafos
+p {
+  margin-bottom: vars.$spacing-md;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Enlaces
+a {
+  color: vars.$color-secondary;
+  text-decoration: none;
+  transition: color vars.$transition-fast;
+
+  &:hover {
+    color: vars.$color-secondary-hover;
+  }
+}
+
+// Listas
+ul, ol {
+  list-style: none;
+}
+
+// Imágenes y vectores
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Elementos de formulario
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+// Contenedor principal para empujar el footer abajo
+main {
+  flex: 1 0 auto;
+}
