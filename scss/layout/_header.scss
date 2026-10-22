@@ -1,0 +1,181 @@
+// Cabecera y menú de navegación
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mix;
+
+.header {
+  background-color: vars.$color-bg-dark;
+  color: vars.$color-text-light;
+  border-bottom: 2px solid vars.$color-secondary;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  @include mix.card-shadow(2);
+
+  &__container {
+    @include mix.flex-box(row, space-between, center);
+    padding-top: vars.$spacing-md;
+    padding-bottom: vars.$spacing-md;
+    position: relative;
+  }
+
+  // Logotipo y nombre
+  &__logo {
+    @include mix.flex-box(row, flex-start, center, vars.$spacing-sm);
+    color: vars.$color-text-light;
+    text-decoration: none;
+
+    &:hover {
+      color: vars.$color-secondary;
+
+      .header__logo-icon {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__logo-icon {
+    width: fn.rem(36px);
+    height: fn.rem(36px);
+    transition: transform vars.$transition-normal;
+  }
+
+  &__brand {
+    font-family: vars.$font-family-serif;
+    font-size: fn.rem(22px);
+    font-weight: vars.$font-weight-bold;
+    letter-spacing: 0.5px;
+  }
+
+  &__brand-accent {
+    color: vars.$color-secondary;
+  }
+
+  // Menú móvil con checkbox (sin JS)
+  &__checkbox {
+    display: none;
+
+    &:checked {
+      ~ .header__nav {
+        display: block;
+      }
+
+      ~ .header__toggle .header__toggle-line:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      ~ .header__toggle .header__toggle-line:nth-child(2) {
+        opacity: 0;
+      }
+
+      ~ .header__toggle .header__toggle-line:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+  }
+
+  // Botón de tres rayas para abrir menú en móvil
+  &__toggle {
+    display: block;
+    cursor: pointer;
+    padding: vars.$spacing-xs;
+
+    @include mix.respond-to('md') {
+      display: none;
+    }
+  }
+
+  &__toggle-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: vars.$color-text-light;
+    margin: 5px 0;
+    transition: all vars.$transition-normal;
+  }
+
+  // Enlaces de navegación
+  &__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: vars.$color-bg-dark;
+    padding: vars.$spacing-md vars.$spacing-lg;
+    border-bottom: 1px solid vars.$color-border-dark;
+    @include mix.card-shadow(3);
+
+    @include mix.respond-to('md') {
+      display: flex !important;
+      position: static;
+      padding: 0;
+      background-color: transparent;
+      border-bottom: none;
+      box-shadow: none;
+    }
+  }
+
+  &__list {
+    @include mix.flex-box(column, flex-start, stretch, vars.$spacing-sm);
+    width: 100%;
+
+    @include mix.respond-to('md') {
+      @include mix.flex-box(row, flex-start, center, vars.$spacing-lg);
+      width: auto;
+    }
+  }
+
+  &__item {
+    margin: 0;
+  }
+
+  &__link {
+    display: block;
+    padding: vars.$spacing-xs vars.$spacing-sm;
+    color: #d4d4d8;
+    font-weight: vars.$font-weight-medium;
+    font-size: vars.$font-size-base;
+    border-radius: vars.$border-radius-sm;
+    transition: all vars.$transition-fast;
+
+    &:hover {
+      color: vars.$color-secondary;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    &--active {
+      color: vars.$color-secondary;
+      font-weight: vars.$font-weight-bold;
+      border-bottom: 2px solid vars.$color-secondary;
+    }
+  }
+
+  // Botón de la cesta de compra
+  &__actions {
+    @include mix.flex-box(row, flex-end, center, vars.$spacing-md);
+  }
+
+  &__cart-link {
+    @include mix.flex-box(row, center, center, vars.$spacing-xs);
+    color: vars.$color-text-light;
+    padding: vars.$spacing-xs vars.$spacing-sm;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: vars.$border-radius-md;
+    font-size: vars.$font-size-sm;
+
+    &:hover {
+      border-color: vars.$color-secondary;
+      color: vars.$color-secondary;
+    }
+  }
+
+  &__cart-badge {
+    background-color: vars.$color-accent;
+    color: #ffffff;
+    font-size: fn.rem(11px);
+    font-weight: vars.$font-weight-bold;
+    padding: 2px 6px;
+    border-radius: vars.$border-radius-full;
+  }
+}
