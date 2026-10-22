@@ -1,0 +1,21 @@
+# Sistemas operativos
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / Dependencias (si se instalan localmente)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de log
+*.log
+
+# No ignorar css/main.css (requisito del proyecto: se sube compilado)
+!css/main.css
