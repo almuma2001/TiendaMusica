@@ -1,0 +1,122 @@
+// Contenedores, secciones y rejilla de productos
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mix;
+
+// Contenedor centrado con ancho máximo
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: vars.$spacing-md;
+  padding-right: vars.$spacing-md;
+
+  @include mix.respond-to('md') {
+    padding-left: vars.$spacing-lg;
+    padding-right: vars.$spacing-lg;
+  }
+
+  &--narrow {
+    max-width: 800px;
+  }
+}
+
+// Secciones de la página
+.section {
+  padding-top: vars.$spacing-2xl;
+  padding-bottom: vars.$spacing-2xl;
+
+  @include mix.respond-to('md') {
+    padding-top: vars.$spacing-3xl;
+    padding-bottom: vars.$spacing-3xl;
+  }
+
+  // Sección con fondo crema
+  &--alt {
+    background-color: vars.$color-bg-alt;
+  }
+
+  // Sección con fondo oscuro
+  &--dark {
+    background-color: vars.$color-bg-dark;
+    color: vars.$color-text-light;
+
+    h1, h2, h3, h4, h5, h6 {
+      color: vars.$color-text-light;
+    }
+
+    .section__subtitle {
+      color: #a1a1aa;
+    }
+  }
+
+  // Encabezado de cada sección
+  &__header {
+    text-align: center;
+    margin-bottom: vars.$spacing-2xl;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__title {
+    margin-bottom: vars.$spacing-xs;
+  }
+
+  &__subtitle {
+    color: vars.$color-text-muted;
+    font-size: vars.$font-size-md;
+  }
+}
+
+// Rejilla de tarjetas de vinilo (responsive)
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: vars.$spacing-lg;
+
+  @include mix.respond-to('sm') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mix.respond-to('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // Para la portada (4 columnas)
+  &--featured {
+    @include mix.respond-to('lg') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+// Miga de pan (ruta de navegación)
+.breadcrumb {
+  padding: vars.$spacing-md 0;
+  font-size: vars.$font-size-sm;
+
+  &__list {
+    @include mix.flex-box($direction: row, $align: center, $gap: vars.$spacing-xs);
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    color: vars.$color-text-muted;
+
+    &:not(:last-child)::after {
+      content: '/';
+      margin-left: vars.$spacing-xs;
+      color: vars.$color-text-muted;
+    }
+  }
+
+  &__link {
+    color: vars.$color-text-muted;
+
+    &:hover {
+      color: vars.$color-secondary;
+    }
+  }
+}
