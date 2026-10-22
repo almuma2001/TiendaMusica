@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacta con La Vinilería. Visítanos en nuestra tienda física en Córdoba o envíanos un mensaje para localizar ediciones especiales y vinilos de colección.">
+  <title>Contacto y Tienda Física | La Vinilería</title>
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Cabecera y menú -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo" aria-label="Ir a página de inicio de La Vinilería">
+        <img src="img/logo.svg" alt="Logotipo La Vinilería" class="header__logo-icon">
+        <span class="header__brand">La <span class="header__brand-accent">Vinilería</span></span>
+      </a>
+
+      <!-- Botón para el menú en móviles -->
+      <input type="checkbox" id="menu-toggle" class="header__checkbox" aria-label="Alternar menú de navegación">
+      <label for="menu-toggle" class="header__toggle" aria-label="Abrir menú">
+        <span class="header__toggle-line"></span>
+        <span class="header__toggle-line"></span>
+        <span class="header__toggle-line"></span>
+      </label>
+
+      <!-- Enlaces de navegación -->
+      <nav class="header__nav" aria-label="Navegación principal">
+        <ul class="header__list">
+          <li class="header__item">
+            <a href="index.html" class="header__link">Inicio</a>
+          </li>
+          <li class="header__item">
+            <a href="catalogo.html" class="header__link">Catálogo</a>
+          </li>
+          <li class="header__item">
+            <a href="producto.html" class="header__link">Vinilo Destacado</a>
+          </li>
+          <li class="header__item">
+            <a href="contacto.html" class="header__link header__link--active">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Carrito -->
+      <div class="header__actions">
+        <a href="catalogo.html" class="header__cart-link" title="Ver carrito de compras">
+          <span>🛒 Cesta</span>
+          <span class="header__cart-badge">2</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Página de contacto -->
+  <main class="section">
+    <div class="container">
+      <!-- Miga de pan -->
+      <nav class="breadcrumb" aria-label="Miga de pan">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="index.html" class="breadcrumb__link">Inicio</a></li>
+          <li class="breadcrumb__item" aria-current="page">Contacto y Ubicación</li>
+        </ol>
+      </nav>
+
+      <!-- Título de la página -->
+      <header class="section__header" style="text-align: left; margin-left: 0; max-width: 100%;">
+        <h1 class="section__title">Contacta con Nosotros</h1>
+        <p class="section__subtitle">
+          ¿Buscas una primera edición concreta, necesitas ayuda con tu pedido o quieres visitarnos en Córdoba? Estamos a tu disposición.
+        </p>
+      </header>
+
+      <!-- Datos de la tienda y formulario -->
+      <div class="contact-layout">
+        <!-- Información y mapa de la tienda -->
+        <aside class="contact-info">
+          <h2 class="contact-info__title">Nuestra Tienda Física</h2>
+          <p class="contact-info__lead">
+            Ven a hojear vinilos, escuchar prensados en nuestras estaciones con tocadiscos o tomar un café con nosotros.
+          </p>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon" aria-hidden="true">📍</div>
+            <div>
+              <p class="contact-info__label">Dirección</p>
+              <p class="contact-info__value">Calle San Fernando, 12, 14003 Córdoba (España)</p>
+            </div>
+          </div>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon" aria-hidden="true">🕒</div>
+            <div>
+              <p class="contact-info__label">Horario de Apertura</p>
+              <p class="contact-info__value">Lunes a Viernes: 10:00 - 14:00 y 17:00 - 20:30<br>Sábados: 10:30 - 14:00 (Tardes y domingos cerrado)</p>
+            </div>
+          </div>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon" aria-hidden="true">✉️</div>
+            <div>
+              <p class="contact-info__label">Correo Electrónico</p>
+              <p class="contact-info__value">pedidos@lavinileria-tienda.es</p>
+            </div>
+          </div>
+
+          <div class="contact-info__item">
+            <div class="contact-info__icon" aria-hidden="true">📞</div>
+            <div>
+              <p class="contact-info__label">Teléfono y WhatsApp</p>
+              <p class="contact-info__value">+34 957 00 12 34 / +34 600 12 34 56</p>
+            </div>
+          </div>
+
+          <!-- Mapa -->
+          <div class="contact-info__map-wrapper">
+            <img src="img/map-placeholder.svg" alt="Mapa de ubicación de La Vinilería en Calle San Fernando, Córdoba">
+          </div>
+        </aside>
+
+        <!-- Formulario de contacto -->
+        <section>
+          <form class="form" action="#" method="post">
+            <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Envíanos un Mensaje</h2>
+            <p style="color: #71717a; font-size: 0.875rem; margin-bottom: 1.5rem;">
+              Te responderemos en menos de 24 horas laborables.
+            </p>
+
+            <div class="form__grid">
+              <!-- Campo: Nombre -->
+              <div class="form__group">
+                <label for="contact-name" class="form__label">Nombre completo <span>*</span></label>
+                <input type="text" id="contact-name" name="nombre" placeholder="Ej. Álvaro Muñoz" required class="form__input">
+              </div>
+
+              <!-- Campo: Correo -->
+              <div class="form__group">
+                <label for="contact-email" class="form__label">Correo electrónico <span>*</span></label>
+                <input type="email" id="contact-email" name="email" placeholder="tu-correo@ejemplo.com" required class="form__input">
+              </div>
+
+              <!-- Campo: Teléfono -->
+              <div class="form__group">
+                <label for="contact-phone" class="form__label">Teléfono (opcional)</label>
+                <input type="tel" id="contact-phone" name="telefono" placeholder="+34 600 00 00 00" class="form__input">
+              </div>
+
+              <!-- Campo: Motivo -->
+              <div class="form__group">
+                <label for="contact-subject" class="form__label">Motivo de contacto <span>*</span></label>
+                <select id="contact-subject" name="asunto" required class="form__select">
+                  <option value="" disabled selected>Selecciona una opción...</option>
+                  <option value="duda-catalogo">Consulta sobre catálogo o stock</option>
+                  <option value="pedido-especial">Petición de vinilo descatalogado / raro</option>
+                  <option value="estado-envio">Consultar estado de envío</option>
+                  <option value="limpieza-discos">Servicio de limpieza por ultrasonidos</option>
+                  <option value="otro">Otro motivo</option>
+                </select>
+              </div>
+
+              <!-- Campo: Mensaje -->
+              <div class="form__group form__group--full">
+                <label for="contact-message" class="form__label">Tu mensaje o consulta <span>*</span></label>
+                <textarea id="contact-message" name="mensaje" placeholder="Indícanos título del disco, artista, sello o cualquier duda que tengas..." required class="form__textarea"></textarea>
+              </div>
+            </div>
+
+            <!-- Aceptación de términos -->
+            <div class="form__checkbox-wrapper">
+              <input type="checkbox" id="contact-terms" name="terminos" required class="form__checkbox">
+              <label for="contact-terms" class="form__checkbox-label">
+                He leído y acepto la política de protección de datos y el tratamiento de mis datos para responder a esta consulta.
+              </label>
+            </div>
+
+            <!-- Botón de envío -->
+            <button type="submit" class="btn btn--secondary btn--lg">Enviar Mensaje</button>
+          </form>
+        </section>
+      </div>
+
+      <!-- Preguntas frecuentes -->
+      <section class="section section--alt" style="border-radius: 12px; padding: 2.5rem; margin-top: 2rem;">
+        <header class="section__header">
+          <h2 class="section__title">Preguntas Frecuentes</h2>
+          <p class="section__subtitle">Resolvemos las dudas más habituales sobre compras, envíos y vinilos.</p>
+        </header>
+
+        <div class="faq" style="max-width: 800px; margin: 0 auto;">
+          <article class="faq__item">
+            <h3 class="faq__question">¿Cómo protegéis los vinilos durante el envío?</h3>
+            <p class="faq__answer">
+              Utilizamos cajas de cartón corrugado de doble pared diseñadas específicamente para LPs de 12", con separadores interiores de burbuja y esquinas amortiguadas. Además, si el vinilo no está precintado, enviamos el disco fuera de la funda para evitar que el canto corte el cartón durante el transporte.
+            </p>
+          </article>
+
+          <article class="faq__item">
+            <h3 class="faq__question">¿Qué significa que un prensado sea de 180 gramos?</h3>
+            <p class="faq__answer">
+              El vinilo estándar suele pesar entre 120 y 140 gramos. El prensado de 180 gramos ofrece mayor masa y rigidez, reduciendo vibraciones no deseadas causadas por la aguja y proporcionando mayor durabilidad frente a deformaciones por temperatura.
+            </p>
+          </article>
+
+          <article class="faq__item">
+            <h3 class="faq__question">¿Podéis conseguirme un vinilo descatalogado?</h3>
+            <p class="faq__answer">
+              ¡Por supuesto! Trabajamos con distribuidores internacionales y ferias especializadas en Europa y EE.UU. Rellena el formulario de arriba seleccionando "Petición de vinilo descatalogado" indicando el título y artista, y nos pondremos a buscarlo.
+            </p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Columna 1: Información -->
+        <div class="footer__col">
+          <p class="footer__brand">La <span>Vinilería</span></p>
+          <p class="footer__description">
+            Tienda independiente dedicada al coleccionismo de discos de vinilo. Preservamos la calidez del sonido acústico con prensados de alta calidad de 180g.
+          </p>
+          <p class="footer__info-item">📍 Calle San Fernando, 12, 14003 Córdoba</p>
+          <p class="footer__info-item">📞 +34 957 00 12 34</p>
+        </div>
+
+        <!-- Columna 2: Enlaces -->
+        <div class="footer__col">
+          <h3 class="footer__title">Navegación</h3>
+          <ul class="footer__list">
+            <li><a href="index.html" class="footer__link">Inicio</a></li>
+            <li><a href="catalogo.html" class="footer__link">Catálogo Completo</a></li>
+            <li><a href="producto.html" class="footer__link">Vinilo Destacado</a></li>
+            <li><a href="contacto.html" class="footer__link">Contacto y Tienda</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Formatos -->
+        <div class="footer__col">
+          <h3 class="footer__title">Formatos</h3>
+          <ul class="footer__list">
+            <li><a href="catalogo.html" class="footer__link">LP 12" de 180 gramos</a></li>
+            <li><a href="catalogo.html" class="footer__link">Ediciones Gatefold Doble</a></li>
+            <li><a href="catalogo.html" class="footer__link">Singles 7" 45 RPM</a></li>
+            <li><a href="catalogo.html" class="footer__link">Primeras Ediciones</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Horario -->
+        <div class="footer__col">
+          <h3 class="footer__title">Horario Tienda</h3>
+          <p class="footer__info-item"><strong>Lunes a Viernes:</strong> 10:00 - 14:00 y 17:00 - 20:30</p>
+          <p class="footer__info-item"><strong>Sábados:</strong> 10:30 - 14:00</p>
+          <p class="footer__info-item"><strong>Domingos:</strong> Cerrado</p>
+          <p class="footer__info-item" style="margin-top: 0.5rem; color: #d97706;">Envíos en 24/48 horas a toda la península.</p>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer__bottom">
+        <p>&copy; 2026 La Vinilería S.L. Todos los derechos reservados.</p>
+        <p class="footer__academic">Proyecto DAW - Diseño de Interfaces Web (Actividad SCSS & Git)</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
