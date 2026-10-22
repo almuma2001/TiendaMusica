@@ -1,0 +1,212 @@
+// Tarjetas de vinilo (.card)
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mix;
+
+.card {
+  background-color: vars.$color-bg-card;
+  border: 1px solid vars.$color-border;
+  border-radius: vars.$border-radius-lg;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform vars.$transition-normal, box-shadow vars.$transition-normal, border-color vars.$transition-normal;
+  @include mix.card-shadow(1);
+  position: relative;
+
+  // Efecto al pasar el ratón por encima
+  &:hover {
+    transform: translateY(-4px);
+    @include mix.card-shadow(3);
+    border-color: rgba(217, 119, 6, 0.4);
+
+    .card__disc {
+      transform: translateX(18px) rotate(45deg);
+    }
+  }
+
+  // Tarjeta destacada con borde dorado
+  &--destacada {
+    border-color: vars.$color-secondary;
+    @include mix.card-shadow(2);
+
+    &::before {
+      content: '★ DESTACADO';
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 5;
+      background-color: vars.$color-secondary;
+      color: #ffffff;
+      font-size: fn.rem(10px);
+      font-weight: vars.$font-weight-bold;
+      padding: 3px 8px;
+      border-radius: vars.$border-radius-sm;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  // Tarjeta con oferta
+  &--oferta {
+    border-color: vars.$color-accent;
+  }
+
+  // Cuadrado de la portada
+  &__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; // Mantiene la portada cuadrada
+    background-color: vars.$color-bg-alt;
+    overflow: hidden;
+  }
+
+  // Imagen de la portada
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    z-index: 2;
+    transition: transform vars.$transition-normal;
+  }
+
+  // Disco de vinilo que asoma por detrás
+  &__disc {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      #d97706 0%,
+      #d97706 18%,
+      #18181b 19%,
+      #27272a 20%,
+      #18181b 21%,
+      #27272a 35%,
+      #18181b 36%,
+      #27272a 50%,
+      #18181b 51%,
+      #27272a 68%,
+      #18181b 69%,
+      #111113 100%
+    );
+    z-index: 1;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      background-color: vars.$color-bg-card;
+      border-radius: 50%;
+    }
+  }
+
+  // Etiqueta en la esquina
+  &__badge {
+    position: absolute;
+    top: vars.$spacing-sm;
+    left: vars.$spacing-sm;
+    z-index: 3;
+  }
+
+  // Textos de la tarjeta
+  &__body {
+    padding: vars.$spacing-md;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  // Género musical
+  &__genre {
+    font-size: vars.$font-size-xs;
+    color: vars.$color-secondary;
+    text-transform: uppercase;
+    font-weight: vars.$font-weight-semibold;
+    letter-spacing: 0.5px;
+    margin-bottom: vars.$spacing-xs;
+  }
+
+  // Artista
+  &__artist {
+    font-size: vars.$font-size-sm;
+    color: vars.$color-text-muted;
+    margin-bottom: 2px;
+  }
+
+  // Título del disco
+  &__title {
+    font-family: vars.$font-family-serif;
+    font-size: fn.rem(18px);
+    line-height: vars.$line-height-tight;
+    margin-bottom: vars.$spacing-xs;
+    @include mix.line-clamp(1);
+
+    a {
+      color: vars.$color-primary;
+
+      &:hover {
+        color: vars.$color-secondary;
+      }
+    }
+  }
+
+  // Año y formato
+  &__meta {
+    font-size: vars.$font-size-xs;
+    color: vars.$color-text-muted;
+    margin-bottom: vars.$spacing-md;
+    @include mix.flex-box(row, flex-start, center, vars.$spacing-xs);
+  }
+
+  // Punto separador
+  &__dot {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background-color: vars.$color-text-muted;
+    border-radius: 50%;
+  }
+
+  // Parte de abajo con precio y botón
+  &__footer {
+    margin-top: auto;
+    padding-top: vars.$spacing-sm;
+    border-top: 1px solid vars.$color-border;
+    @include mix.flex-box(row, space-between, center);
+  }
+
+  &__price-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__price-old {
+    font-size: vars.$font-size-xs;
+    color: vars.$color-text-muted;
+    text-decoration: line-through;
+  }
+
+  &__price {
+    font-size: fn.rem(18px);
+    font-weight: vars.$font-weight-bold;
+    color: vars.$color-primary;
+  }
+
+  &__actions {
+    display: flex;
+    gap: vars.$spacing-xs;
+  }
+}

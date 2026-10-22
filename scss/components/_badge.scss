@@ -1,0 +1,32 @@
+// Etiquetas de colores (.badge)
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+
+.badge {
+  display: inline-block;
+  font-family: vars.$font-family-sans;
+  font-size: fn.rem(11px);
+  font-weight: vars.$font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: fn.rem(3px) fn.rem(8px);
+  border-radius: vars.$border-radius-sm;
+  color: #ffffff;
+  background-color: vars.$color-primary;
+  line-height: 1;
+
+  // Genera cada clase de color recorriendo la lista de $badge-types
+  @each $name, $bg-color in vars.$badge-types {
+    &--#{$name} {
+      background-color: $bg-color;
+      color: #ffffff;
+    }
+  }
+
+  // Etiqueta sin fondo
+  &--outline {
+    background-color: transparent;
+    border: 1px solid currentColor;
+    color: vars.$color-text-muted;
+  }
+}
