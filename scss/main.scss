@@ -1,0 +1,24 @@
+// Archivo principal que une todos los archivos SCSS
+
+// Variables, funciones y mixins
+@use 'abstracts/variables';
+@use 'abstracts/functions';
+@use 'abstracts/mixins';
+
+// Estilos base y reseteo
+@use 'base/reset';
+
+// Estructura general (cabecera, pie, columnas)
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/grid';
+
+// Componentes
+@use 'components/button';
+@use 'components/badge';
+@use 'components/card';
+@use 'components/form';
+@use 'components/hero';
+@use 'components/product-detail';
+@use 'components/filters';
+@use 'components/contact';
