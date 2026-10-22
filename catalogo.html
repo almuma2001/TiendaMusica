@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo completo de discos de vinilo en La Vinilería. Clásicos del rock, jazz, soul, electrónica y metal en ediciones audiófilas de 180 gramos.">
+  <title>Catálogo de Vinilos | La Vinilería</title>
+  <!-- Estilos compilados -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Cabecera y menú de navegación -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo" aria-label="Ir a página de inicio de La Vinilería">
+        <img src="img/logo.svg" alt="Logotipo La Vinilería" class="header__logo-icon">
+        <span class="header__brand">La <span class="header__brand-accent">Vinilería</span></span>
+      </a>
+
+      <!-- Botón del menú móvil (sin JS) -->
+      <input type="checkbox" id="menu-toggle" class="header__checkbox" aria-label="Alternar menú de navegación">
+      <label for="menu-toggle" class="header__toggle" aria-label="Abrir menú">
+        <span class="header__toggle-line"></span>
+        <span class="header__toggle-line"></span>
+        <span class="header__toggle-line"></span>
+      </label>
+
+      <!-- Enlaces del menú -->
+      <nav class="header__nav" aria-label="Navegación principal">
+        <ul class="header__list">
+          <li class="header__item">
+            <a href="index.html" class="header__link">Inicio</a>
+          </li>
+          <li class="header__item">
+            <a href="catalogo.html" class="header__link header__link--active">Catálogo</a>
+          </li>
+          <li class="header__item">
+            <a href="producto.html" class="header__link">Vinilo Destacado</a>
+          </li>
+          <li class="header__item">
+            <a href="contacto.html" class="header__link">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Carrito -->
+      <div class="header__actions">
+        <a href="catalogo.html" class="header__cart-link" title="Ver carrito de compras">
+          <span>🛒 Cesta</span>
+          <span class="header__cart-badge">2</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="section">
+    <div class="container">
+      <!-- Miga de pan -->
+      <nav class="breadcrumb" aria-label="Miga de pan">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="index.html" class="breadcrumb__link">Inicio</a></li>
+          <li class="breadcrumb__item" aria-current="page">Catálogo Completo</li>
+        </ol>
+      </nav>
+
+      <!-- Título del catálogo -->
+      <header class="section__header" style="text-align: left; margin-left: 0; max-width: 100%;">
+        <h1 class="section__title">Catálogo de Vinilos</h1>
+        <p class="section__subtitle">Explora nuestra colección de discos en vinilo de alta fidelidad, primeras ediciones y lanzamientos esenciales.</p>
+      </header>
+
+      <!-- Filtros por género -->
+      <div class="filters">
+        <div class="filters__group" role="group" aria-label="Filtrar por género musical">
+          <button type="button" class="filters__pill filters__pill--active">Todos (9)</button>
+          <button type="button" class="filters__pill">Rock</button>
+          <button type="button" class="filters__pill">Jazz</button>
+          <button type="button" class="filters__pill">Pop & Funk</button>
+          <button type="button" class="filters__pill">Electrónica</button>
+          <button type="button" class="filters__pill">Soul</button>
+          <button type="button" class="filters__pill">Musical / BSO</button>
+        </div>
+
+        <div class="filters__sort">
+          <label for="catalog-sort">Ordenar:</label>
+          <select id="catalog-sort">
+            <option value="featured">Destacados</option>
+            <option value="price-asc">Precio: de menor a mayor</option>
+            <option value="price-desc">Precio: de mayor a menor</option>
+            <option value="newest">Año de edición</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Lista de vinilos -->
+      <div class="products-grid">
+        <!-- Vinilo: Pink Floyd -->
+        <article class="card card--destacada">
+          <div class="card__media">
+            <span class="card__badge badge badge--bestseller">Bestseller</span>
+            <img src="img/vinyl-pink-floyd.png" alt="Portada de vinilo Pink Floyd - The Dark Side of the Moon" class="card__image">
+            <div class="card__disc" aria-hidden="true"></div>
+          </div>
+          <div class="card__body">
+            <span class="card__genre">Rock Progresivo</span>
+            <span class="card__artist">Pink Floyd</span>
+            <h2 class="card__title">
+              <a href="producto.html">The Dark Side of the Moon</a>
+            </h2>
+            <div class="card__meta">
+              <span>1973</span>
+              <span class="card__dot"></span>
+              <span>LP 180g</span>
+              <span class="card__dot"></span>
+              <span>Harvest Records</span>
+            </div>
+            <div class="card__footer">
+              <div class="card__price-box">
+                <span class="card__price">32,95 €</span>
+              </div>
+              <div class="card__actions">
+                <a href="producto.html" class="btn btn--secondary btn--sm">Ver Ficha</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vinilo: Fleetwood Mac -->
+        <article class="card">
+          <div class="card__media">
+            <span class="card__badge badge badge--novedad">Novedad</span>
+            <img src="img/vinyl-fleetwood-mac.jpeg" alt="Portada de vinilo Fleetwood Mac - Rumours" class="card__image">
+            <div class="card__disc" aria-hidden="true"></div>
+          </div>
+          <div class="card__body">
+            <span class="card__genre">Pop Rock</span>
+            <span class="card__artist">Fleetwood Mac</span>
+            <h2 class="card__title">
+              <a href="producto-fleetwood-mac.html">Rumours</a>
+            </h2>
+            <div class="card__meta">
+              <span>1977</span>
+              <span class="card__dot"></span>
+              <span>LP 180g</span>
+              <span class="card__dot"></span>
+              <span>Warner Records</span>
+            </div>
+            <div class="card__footer">
+              <div class="card__price-box">
+                <span class="card__price">29,50 €</span>
+              </div>
+              <div class="card__actions">
+                <a href="producto-fleetwood-mac.html" class="btn btn--outline btn--sm">Ver Ficha</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vinilo: Miles Davis -->
+        <article class="card">
+          <div class="card__media">
+            <span class="card__badge badge badge--edicion-especial">Especial</span>
+            <img src="img/vinyl-miles-davis.jpeg" alt="Portada de vinilo Miles Davis - Kind of Blue" class="card__image">
+            <div class="card__disc" aria-hidden="true"></div>
+          </div>
+          <div class="card__body">
+            <span class="card__genre">Modal Jazz</span>
+            <span class="card__artist">Miles Davis</span>
+            <h2 class="card__title">
+              <a href="producto-miles-davis.html">Kind of Blue</a>
+            </h2>
+            <div class="card__meta">
+              <span>1959</span>
+              <span class="card__dot"></span>
+              <span>LP Mono 180g</span>
+              <span class="card__dot"></span>
+              <span>Columbia</span>
+            </div>
+            <div class="card__footer">
+              <div class="card__price-box">
+                <span class="card__price">34,00 €</span>
+              </div>
+              <div class="card__actions">
+                <a href="producto-miles-davis.html" class="btn btn--outline btn--sm">Ver Ficha</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vinilo: The Beatles -->
+        <article class="card">
+          <div class="card__media">
+            <span class="card__badge badge badge--bestseller">Clásico</span>
+            <img src="img/vinyl-beatles.png" alt="Portada de vinilo The Beatles - Abbey Road" class="card__image">
+            <div class="card__disc" aria-hidden="true"></div>
+          </div>
+          <div class="card__body">
+            <span class="card__genre">Rock Clásico</span>
+            <span class="card__artist">The Beatles</span>
+            <h2 class="card__title">
+              <a href="producto-beatles.html">Abbey Road</a>
+            </h2>
+            <div class="card__meta">
+              <span>1969</span>
+              <span class="card__dot"></span>
+              <span>LP 180g Remaster</span>
+              <span class="card__dot"></span>
+              <span>Apple Records</span>
+            </div>
+            <div class="card__footer">
+              <div class="card__price-box">
+                <span class="card__price">31,50 €</span>
+              </div>
+              <div class="card__actions">
+                <a href="producto-beatles.html" class="btn btn--outline btn--sm">Ver Ficha</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vinilo: Daft Punk -->
+        <article class="card">
+          <div class="card__media">
+            <span class="card__badge badge badge--edicion-especial">Doble LP</span>
+            <img src="img/vinyl-daft-punk.jpeg" alt="Portada de vinilo Daft Punk - Random Access Memories" class="card__image">
+            <div class="card__disc" aria-hidden="true"></div>
+          </div>
+          <div class="card__body">
+            <span class="card__genre">Electrónica / Funk</span>
+            <span class="card__artist">Daft Punk</span>
+            <h2 class="card__title">
+              <a href="producto-daft-punk.html">Random Access Memories</a>
+            </h2>
+            <div class="card__meta">
+              <span>2013</span>
+              <span class="card__dot"></span>
+              <span>2xLP Gatefold 180g</span>
+              <span class="card__dot"></span>
+              <span>Columbia</span>
+            </div>
+            <div class="card__footer">
+              <div class="card__price-box">
+                <span class="card__price">36,00 €</span>
+              </div>
+              <div class="card__actions">
+                <a href="producto-daft-punk.html" class="btn btn--outline btn--sm">Ver Ficha</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vinilo: Rosalía -->
+        <article class="card card--oferta">
+          <div class="card__media">
+            <span class="card__badge badge badge--oferta">-15% Oferta</span>
+            <img src="img/vinyl-rosalia.jpeg" alt="Portada de vinilo Rosalía - El Mal Querer" class="card__image">
+            <div class="card__disc" aria-hidden="true"></div>
+          </div>
+          <div class="card__body">
+            <span class="card__genre">Nuevo Flamenco</span>
+            <span class="card__artist">Rosalía</span>
+            <h2 class="card__title">
+              <a href="producto-rosalia.html">El Mal Querer</a>
+            </h2>
+            <div class="card__meta">
+              <span>2018</span>
+              <span class="card__dot"></span>
+              <span>LP Gatefold</span>
+              <span class="card__dot"></span>
+              <span>Sony Music</span>
+            </div>
+            <div class="card__footer">
+              <div class="card__price-box">
+                <span class="card__price-old">27,00 €</span>
+                <span class="card__price">22,95 €</span>
+              </div>
+              <div class="card__actions">
+                <a href="producto-rosalia.html" class="btn btn--accent btn--sm">Comprar</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vinilo: Amy Winehouse -->
+        <article class="card">
+          <div class="card__media">
+            <span class="card__badge badge badge--novedad">Top Soul</span>
+            <img src="img/vinyl-amy-winehouse.png" alt="Portada de vinilo Amy Winehouse - Back to Black" class="card__image">
+            <div class="card__disc" aria-hidden="true"></div>
+          </div>
+          <div class="card__body">
+            <span class="card__genre">Soul / R&amp;B</span>
+            <span class="card__artist">Amy Winehouse</span>
+            <h2 class="card__title">
+              <a href="producto-amy-winehouse.html">Back to Black</a>
+            </h2>
+            <div class="card__meta">
+              <span>2006</span>
+              <span class="card__dot"></span>
+              <span>LP 180g</span>
+              <span class="card__dot"></span>
+              <span>Island Records</span>
+            </div>
+            <div class="card__footer">
+              <div class="card__price-box">
+                <span class="card__price">28,00 €</span>
+              </div>
+              <div class="card__actions">
+                <a href="producto-amy-winehouse.html" class="btn btn--outline btn--sm">Ver Ficha</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vinilo: Hamilton -->
+        <article class="card">
+          <div class="card__media">
+            <span class="card__badge badge badge--edicion-especial">Box Set 4xLP</span>
+            <img src="img/vinyl-hamilton.jpeg" alt="Portada de vinilo Hamilton: An American Musical" class="card__image">
+            <div class="card__disc" aria-hidden="true"></div>
+          </div>
+          <div class="card__body">
+            <span class="card__genre">Teatro Musical / BSO</span>
+            <span class="card__artist">Lin-Manuel Miranda</span>
+            <h2 class="card__title">
+              <a href="producto-hamilton.html">Hamilton</a>
+            </h2>
+            <div class="card__meta">
+              <span>2015</span>
+              <span class="card__dot"></span>
+              <span>4xLP 180g Box Set</span>
+              <span class="card__dot"></span>
+              <span>Atlantic</span>
+            </div>
+            <div class="card__footer">
+              <div class="card__price-box">
+                <span class="card__price">68,00 €</span>
+              </div>
+              <div class="card__actions">
+                <a href="producto-hamilton.html" class="btn btn--outline btn--sm">Ver Ficha</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vinilo: Michael Jackson -->
+        <article class="card">
+          <div class="card__media">
+            <span class="card__badge badge badge--bestseller">Hito Histórico</span>
+            <img src="img/vinyl-michael-jackson.png" alt="Portada de vinilo Michael Jackson - Thriller" class="card__image">
+            <div class="card__disc" aria-hidden="true"></div>
+          </div>
+          <div class="card__body">
+            <span class="card__genre">Pop / Funk</span>
+            <span class="card__artist">Michael Jackson</span>
+            <h2 class="card__title">
+              <a href="producto-michael-jackson.html">Thriller</a>
+            </h2>
+            <div class="card__meta">
+              <span>1982</span>
+              <span class="card__dot"></span>
+              <span>LP Gatefold 180g</span>
+              <span class="card__dot"></span>
+              <span>Epic Records</span>
+            </div>
+            <div class="card__footer">
+              <div class="card__price-box">
+                <span class="card__price">27,90 €</span>
+              </div>
+              <div class="card__actions">
+                <a href="producto-michael-jackson.html" class="btn btn--outline btn--sm">Ver Ficha</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Paginación -->
+      <nav class="pagination" aria-label="Paginación de resultados">
+        <span class="pagination__item pagination__item--active" aria-current="page">1</span>
+        <a href="catalogo.html" class="pagination__item">2</a>
+        <a href="catalogo.html" class="pagination__item">3</a>
+        <a href="catalogo.html" class="pagination__item pagination__item--arrow" aria-label="Página siguiente">Siguiente →</a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Información de la tienda -->
+        <div class="footer__col">
+          <p class="footer__brand">La <span>Vinilería</span></p>
+          <p class="footer__description">
+            Tienda independiente dedicada al coleccionismo de discos de vinilo. Preservamos la calidez del sonido acústico con prensados de alta calidad de 180g.
+          </p>
+          <p class="footer__info-item">📍 Calle San Fernando, 12, 14003 Córdoba</p>
+          <p class="footer__info-item">📞 +34 957 00 12 34</p>
+        </div>
+
+        <!-- Enlaces rápidos -->
+        <div class="footer__col">
+          <h3 class="footer__title">Navegación</h3>
+          <ul class="footer__list">
+            <li><a href="index.html" class="footer__link">Inicio</a></li>
+            <li><a href="catalogo.html" class="footer__link">Catálogo Completo</a></li>
+            <li><a href="producto.html" class="footer__link">Vinilo Destacado</a></li>
+            <li><a href="contacto.html" class="footer__link">Contacto y Tienda</a></li>
+          </ul>
+        </div>
+
+        <!-- Formatos -->
+        <div class="footer__col">
+          <h3 class="footer__title">Formatos</h3>
+          <ul class="footer__list">
+            <li><a href="catalogo.html" class="footer__link">LP 12" de 180 gramos</a></li>
+            <li><a href="catalogo.html" class="footer__link">Ediciones Gatefold Doble</a></li>
+            <li><a href="catalogo.html" class="footer__link">Singles 7" 45 RPM</a></li>
+            <li><a href="catalogo.html" class="footer__link">Primeras Ediciones</a></li>
+          </ul>
+        </div>
+
+        <!-- Horario -->
+        <div class="footer__col">
+          <h3 class="footer__title">Horario Tienda</h3>
+          <p class="footer__info-item"><strong>Lunes a Viernes:</strong> 10:00 - 14:00 y 17:00 - 20:30</p>
+          <p class="footer__info-item"><strong>Sábados:</strong> 10:30 - 14:00</p>
+          <p class="footer__info-item"><strong>Domingos:</strong> Cerrado</p>
+          <p class="footer__info-item" style="margin-top: 0.5rem; color: #d97706;">Envíos en 24/48 horas a toda la península.</p>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer__bottom">
+        <p>&copy; 2026 La Vinilería S.L. Todos los derechos reservados.</p>
+        <p class="footer__academic">Proyecto DAW - Diseño de Interfaces Web (Actividad SCSS & Git)</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
